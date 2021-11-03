@@ -1,4 +1,4 @@
-<include a CircleCI status badge, here>
+[![CircleCI](https://circleci.com/gh/djarrin/Operationalize-A-Machine-Learning-Microservice-API/tree/main.svg?style=svg)](https://circleci.com/gh/djarrin/Operationalize-A-Machine-Learning-Microservice-API/tree/main)
 
 ## Project Overview
 
@@ -32,7 +32,19 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 
 1. Standalone:  `python app.py`
 2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
+3. Run in Kubernetes:  
+   1. First make sure you have minikube installed: `brew install minikube`
+   2. then run: `./run_kubernetes.sh`
+   3. Wait and run `kubectl get pod` and make sure prediction-api is set to "Running"
+   4. run `./run_kubernetes.sh` again
+
+### Important Files In Repo
+* Dockerfile: Contains logic to spin up and configure the Docker Container
+* Makefile: Contains the logical commands to set up python env and lint appropriate files (Docker and app.py)
+* requirements.txt: contains application dependencies
+* run_docker.sh: Actually builds and runs docker image
+* run_kubernetes.sh: sets up kubernetes pods and runs them
+* upload_docker.sh: uploads docker image to Docker Hub
 
 ### Kubernetes Steps
 

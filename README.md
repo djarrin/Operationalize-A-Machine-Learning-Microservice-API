@@ -34,9 +34,10 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 2. Run in Docker:  `./run_docker.sh`
 3. Run in Kubernetes:  
    1. First make sure you have minikube installed: `brew install minikube`
-   2. then run: `./run_kubernetes.sh`
-   3. Wait and run `kubectl get pod` and make sure prediction-api is set to "Running"
-   4. run `./run_kubernetes.sh` again
+   2. then run: `minikube start`
+   3. then run: `./run_kubernetes.sh`
+   4. Wait and run `kubectl get pod` and make sure prediction-api is set to "Running"
+   5. run `./run_kubernetes.sh` again
 
 ### Important Files In Repo
 * Dockerfile: Contains logic to spin up and configure the Docker Container

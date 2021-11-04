@@ -1,12 +1,37 @@
-NAMESPACE     NAME                               READY   STATUS    RESTARTS   AGE
-default       prediction-api                     1/1     Running   0          64s
-kube-system   coredns-78fcd69978-f8zwx           1/1     Running   0          71s
-kube-system   etcd-minikube                      1/1     Running   0          87s
-kube-system   kube-apiserver-minikube            1/1     Running   0          85s
-kube-system   kube-controller-manager-minikube   1/1     Running   0          85s
-kube-system   kube-proxy-ljwx2                   1/1     Running   0          72s
-kube-system   kube-scheduler-minikube            1/1     Running   0          85s
-kube-system   storage-provisioner                1/1     Running   0          84s
+[What is Displayed on Main Terminal]
+NAMESPACE     NAME                               READY   STATUS    RESTARTS       AGE
+default       prediction-api                     1/1     Running   0              64s
+kube-system   coredns-78fcd69978-mqdng           1/1     Running   0              2m39s
+kube-system   etcd-minikube                      1/1     Running   0              2m52s
+kube-system   kube-apiserver-minikube            1/1     Running   0              2m52s
+kube-system   kube-controller-manager-minikube   1/1     Running   0              2m52s
+kube-system   kube-proxy-rj76c                   1/1     Running   0              2m40s
+kube-system   kube-scheduler-minikube            1/1     Running   0              2m54s
+kube-system   storage-provisioner                1/1     Running   1 (2m8s ago)   2m51s
 Forwarding from 127.0.0.1:8000 -> 80
 Forwarding from [::1]:8000 -> 80
 Handling connection for 8000
+
+
+
+[What is Outputted to Kubernete's ..... log]
+* Serving Flask app "app" (lazy loading)
+* Environment: production
+WARNING: This is a development server. Do not use it in a production deployment.
+Use a production WSGI server instead.
+* Debug mode: on
+* Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+* Restarting with stat
+* Debugger is active!
+* Debugger PIN: 134-148-982
+[2021-11-04 12:53:13,440] INFO in app: JSON payload:
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2021-11-04 12:53:13,451] INFO in app: Inference payload DataFrame:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2021-11-04 12:53:13,458] INFO in app: Scaling Payload:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2021-11-04 12:53:13,460] INFO in app: Prediction Value:
+[20.35373177134412]
+127.0.0.1 - - [04/Nov/2021 12:53:13] "POST /predict HTTP/1.1" 200 -
